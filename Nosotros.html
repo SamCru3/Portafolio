@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nosotros</title>
+        <link rel="stylesheet" href="General.css">
+        <link rel="stylesheet" href="Nosotros.css">
+        <link rel="stylesheet" href="ModalCompra.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+
+        <div class="mensaje" id="mensaje">¡Añadido exitosamente!</div>
+        <div class="sombra" id="sombra"></div>
+
+        <header>
+            <div class="header-contenedor">
+                <div class="logo">
+                    <img src="Imagenes/Logo.jpeg" alt="Logo">
+                </div>
+
+                <nav class="menu">
+                    <a href="index.html">Productos ▼</a>
+                    <div class="linea-separador"></div>
+                    <a href="Nosotros.html">Nosotros</a>
+                    <div class="linea-separador"></div>
+                    <a href="PQR.html">Contáctenos</a>
+                </nav>
+
+                <div class="numero">
+                    <h2>¡Llama ahora y pide!</h2>
+                    <p>300 0000000</p>
+                    <p>315 1111111</p>
+                </div>
+
+                <div class="carrito" onclick="abrirCarrito()">
+                    <div class="circulo">
+                        <i class="bi bi-cart3"></i>
+                        <span class="badge" id="badge">0</span>
+                    </div>
+                    <p>Carrito ▼</p>
+                    <div class="mini-carro" id="miniCarro"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="proposito">
+                <div class="contenido-proposito">
+                    <div class="texto-proposito">
+                        <h2>Nuestro Propósito</h2>
+                        <p>En Dulce Capricho creemos que cada postre puede transmitir alegría, cariño y momentos inolvidables. Nuestro propósito es ofrecer productos que no solo sean deliciosos, sino también un reflejo del esfuerzo, la pasión y el toque personal que nos caracteriza. Cada receta cuenta una historia, y cada detalle está pensado para endulzar la vida de quienes confían en nosotros.
+                        </p>
+                    </div>
+                    <div class="imagen-proposito">
+                        <img src="Imagenes/Proposito.jpeg" alt="Nuestro propósito en Dulce Capricho">
+                    </div>
+                </div>
+            </section>
+
+            <section class="MV">
+                <div class="misionYvision">
+                    <div class="CajaMV">
+                        <h2>Misión</h2><br>
+                    <p>Ofrecer postres artesanales de alta calidad que combinan sabor, frescura y presentación, elaborados con dedicación y responsabilidad. Buscamos endulzar los momentos de nuestros clientes a través de un servicio amable y productos hechos con pasión.</p>
+                    </div>
+
+                    <div class="CajaMV">
+                        <h2>Visión</h2><br>
+                        <p>Convertirnos en un emprendimiento reconocido por la excelencia y la creatividad en la elaboración de postres, fortaleciendo nuestra presencia en el mercado local y creciendo con compromiso, innovación y amor por lo que hacemos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="InicioTodo">
+                <div class="contenedorInicio">
+                    <div class="imagenInicio">
+                        <img src="Imagenes/inicio.jpg" alt="Cómo empezó todo">
+                    </div>
+                    <div class="textoInicio">
+                        <h2>Cómo empezó todo</h2>
+                        <p>Todo comenzó con una simple pasión por la repostería casera. Empezamos preparando postres para familiares y amigos, quienes siempre quedaban encantados con el sabor y la presentación. Esa motivación nos llevó a crear <strong>Dulce Capricho</strong>, un sueño que poco a poco se transformó en un emprendimiento real. Hoy seguimos con el mismo entusiasmo del primer día, buscando innovar y sorprender con cada creación.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="video">
+                <h2>Video Promocional</h2>
+
+                <div class="contenedor-video">
+                    <video id="miVideo" poster="preview.jpg">
+                        <source src="Imagenes/Video.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+
+                    <div class="overlay">
+                        <button class="play-btn" onclick="this.parentElement.style.display='none'; this.parentElement.previousElementSibling.play();">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="Historia">
+                <div class="contenedorHistoria">
+                    <div class="textoHistoria">
+                        <h2>Nuestra Historia</h2>
+                        <p>Desde nuestros inicios, en <strong>Dulce Capricho</strong> hemos trabajado con amor y dedicación para endulzar los momentos más especiales de nuestros clientes. Nacimos con la idea de ofrecer postres únicos, preparados artesanalmente y con los mejores ingredientes. Con el paso del tiempo, fuimos creciendo gracias a la confianza de quienes disfrutan de nuestros sabores, convirtiéndonos en una marca que representa calidad, detalle y dulzura.
+                        </p>
+                    </div>
+                    <div class="imagenHistoria">
+                        <img src="Imagenes/Historia.jpg" alt="Nuestra historia">
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer>
+            <div class="enlaces">
+                <div class="Pcolombia fo">
+                    <h1>Puntos Colombia</h1>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+
+                <div class="Nempresa fo">
+                    <h1>Nuestra Empresa</h1>
+                    <a href="Nosotros.html">Nosotros</a>
+                    <a href="#Productos">Productos</a>
+                    <a href="PQR.html">PQRS</a>
+                </div>
+
+                <div class="Hatencion fo">
+                    <h1>Horarios de Atención</h1>
+                    <p>Lunes a Viernes: 8:00 am a 9:00 pm</p>
+                    <p>Sábado y Domingo: 8:00 am a 10:00 pm</p>
+                    <br><p>aaguirresara910@gmail.com</p>
+                </div>
+
+                <div class="Redes fo">
+                    <h1>Redes Sociales</h1>
+                    <a href="https://www.tiktok.com/@pdulcecapricho_" target="_blank">
+                        <i class="bi bi-facebook"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/pdulcecapricho_?igsh=MWRoYzRoYWQzNHI0OQ%3D%3D&utm_source=qr" target="_blank">
+                        <i class="bi bi-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+            <p class="creado">&copy; 2025 Dulce Capricho. Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="JS/BaseDeDatos.js"></script>
+        <script src="JS/Carrito.js"></script>
+        <script src="Comprar.js"></script>
+
+    </body>
+</html>

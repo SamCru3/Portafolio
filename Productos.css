@@ -1,0 +1,577 @@
+/* #region slider1 */
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffe6f0, #ffd1e6);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.slider {
+    display: flex;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+.slide-texto {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem;
+    color: #4a1a3a;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+.slide-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #e91e63;
+}
+.slide-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+    line-height: 1.4;
+    color: #a83279;
+}
+.slide-texto p span {
+    text-decoration: line-through;
+    color: #ff6699;
+    margin-left: 0.5rem;
+    font-weight: 600;
+}
+.slide-texto button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    color: #fff;
+    background: #ff66a3;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 102, 163, 0.4);
+}
+.slide-texto button:hover {
+    background: #ff3385;
+    transform: scale(1.05);
+}
+.slide-img {
+    width: 50%;
+    height: 100%;
+    background-blend-mode: soft-light;
+    box-shadow: -25px 0 50px -20px rgba(0, 0, 0, 0.25);
+}
+.slide-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 208, 224, 0.05) 0%,
+        rgba(255, 234, 240, 0.1) 40%,
+        rgba(245, 141, 180, 0.2) 100%
+    );
+    pointer-events: none;
+}
+.puntos {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+.dot {
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 182, 193, 0.9);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.dot.active {
+    background: #ff3399;
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(255, 51, 153, 0.7);
+}
+
+/* #endregion */
+
+/* #region bannerProductos */
+
+.productos {
+    background-color: #f58db4;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 1rem 0;
+}
+.productos button::after {
+    content: "";
+    position: absolute;
+    bottom: -3rem;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 40px solid #f58db4;
+    transition: transform 0.3s ease;
+}
+.productos button.active::after {
+    transform: translateX(-50%) scaleY(1);
+}
+.productos button:not(:last-child) {
+    border-right: 2px solid rgba(222, 218, 221, 0.8);
+}
+.productos button {
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    color: #A87455;
+    font-weight: bold;
+    position: relative;
+    padding: 0 2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-out;
+}
+.productos button.active {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.cantidades {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+
+}
+.op button {
+    width: 60px;
+    height: 60px;
+    padding: 5px 9px;
+    border: 2px solid #C54B8C;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #C54B8C;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.Bcantidad:hover {
+    background-color: #C54B8C;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(197, 75, 140, 0.4);
+}
+.Bcantidad.activo {
+    background-color: #C54B8C;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(197, 75, 140, 0.4);
+}
+
+/* #endregion */
+
+/* #region Catalogo */
+
+.catalogo {
+    padding: 5rem;
+    gap: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 350px); 
+}
+.prducto {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.producto.oculto {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+.imagen {
+    width: 100%;
+    height: 350px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.imagen div {
+    position: absolute;
+    z-index: 2;
+    background-color: beige;
+    padding: 5px 12px;
+    font-size: 20px;
+}
+.promocion {
+    top: 0;
+    left: 0;
+}
+.ver-mas {
+    bottom: 0px;
+    right: 0px;
+}
+.imagen img {
+    width: 100%;
+    display: block;
+    height: 350px;
+}
+.producto h2 {
+    margin-bottom: 10px;
+}
+.producto {
+    width: 350px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(197, 75, 140, 0.2);
+    transition: all 0.3s ease;
+}
+.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(197, 75, 140, 0.35);
+    background-color: #ffe6f2;
+}
+.producto h3 {
+    font-size: 18px;
+    margin: 20px 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.producto h3::before, .producto h3::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+.producto h3::before {
+  margin-right: 10px;
+}
+.producto h3::after {
+  margin-left: 10px;
+}
+.original {
+    text-decoration: line-through;
+}
+.nada {
+    visibility: hidden;
+}
+.añadir {
+    background: transparent;
+    border: 2px solid #C54B8C;
+    transition: all 0.3s ease;
+    color: #C54B8C;
+    padding: 0.3rem 0.6rem;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.añadir:hover {
+    background-color: #C54B8C;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(197, 75, 140, 0.4);
+}
+
+/* #endregion */
+
+/* #region Reseñas */
+
+.resenas {
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    background: #FFD0E0;
+}
+.resenas h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #C54B8C;
+}
+.resena-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.resena {
+    background: #FFEAF0;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.resena p:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.resena h4 {
+    margin-top: 1rem;
+    color: #C54B8C;
+    font-weight: bold;
+}
+.resena:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(197, 75, 140, 0.3);
+}
+
+/* #endregion */
+
+/* #region Valores */
+
+.valores {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #FFEAF0, #FFD0E0);
+}
+.titulo-valores {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.titulo-valores h1 {
+    font-size: 2.8rem;
+    color: #FF1E56;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.titulo-valores p {
+    font-size: 1.2rem;
+    color: #a83279;
+    margin-top: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.contenedor-valores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+.CajaValor {
+    position: relative;
+    padding: 2rem;
+    border-radius: 16px;
+    color: #2B2B2B;
+    background: linear-gradient(135deg, #FFD0E0, #FFB0C0);
+    text-align: center;
+    width: 350px;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.CajaValor:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    color: #FF1E56;
+    border: 2px solid #FF1E56;
+}
+.CajaValor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-20deg);
+    transition: all 0.6s ease;
+}
+.CajaValor:hover::before {
+    left: 0;
+}
+
+/* #endregion */
+
+/* #region Fotos */
+
+.fotos {
+    margin: 5rem;
+}
+.fotos h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin-bottom: 3rem;
+}
+.equipo {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+.tarjeta {
+    position: relative;
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.tarjeta img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.tarjeta .info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 224, 240, 0.85);
+    padding: 1rem 0;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+.tarjeta .info h1 {
+    font-size: 22px;
+    margin: 0;
+    color: #C54B8C;
+    font-family: 'Montserrat', sans-serif;
+}
+.tarjeta .info p {
+    margin: 5px 0 0;
+    font-weight: bold;
+    color: #A73F77;
+}
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(197, 75, 140, 0.35);
+}
+.tarjeta:hover img {
+    transform: scale(1.1);
+}
+.tarjeta:hover .info {
+    transform: translateY(0);
+}
+
+/* #endregion */
+
+/* #region Beneficios y Suscripcion*/
+
+.beneficios {
+    text-align: center;
+    padding: 8rem 2rem;
+    background: linear-gradient(135deg, #FFD0E0, #FFEAF0);
+    font-family: 'Montserrat', sans-serif;
+}
+.beneficios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #C54B8C;
+}
+.beneficio-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+.beneficio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.beneficio i {
+    font-size: 3rem;
+    color: #C54B8C;
+    margin-bottom: 1rem;
+}
+.beneficio p {
+    font-weight: bold;
+    color: #333;
+}
+.beneficio:hover {
+    transform: translateY(-10px);
+}
+.Suscripcion {
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.Suscripcion h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #C54B8C;
+}
+.form-Suscripcion {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.form-Suscripcion input {
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    border: 1px solid #C54B8C;
+    width: 300px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+.form-Suscripcionr input:focus {
+    border-color: #A73F77;
+}
+.form-Suscripcion button {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    background: #C54B8C;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form-Suscripcion button:hover {
+    background: #A73F77;
+}
+
+/* #endregion */
